@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سنة تالتة اقتصاد | لوحة أسامة الشخصية</title>
+    <!-- ربط مكتبة التصميم Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <div>
+        <!-- شريط دعاء لأبي (رحمه الله) -->
+        <div class="bg-indigo-950/80 border-b border-indigo-900/50 text-indigo-200 text-xs py-2 text-center font-medium px-4 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-heart text-rose-400"></i>
+            <span>اللهم اغفر لأبي وارحمه، واسكنه فسيح جناتك، واجعله في روضات نعيمك يارب العالمين.</span>
+        </div>
+
+        <!-- شريط العلوى (Navbar) -->
+        <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 px-4 py-3 flex justify-between items-center shadow-lg">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-10 h-10 rounded-full bg-indigo-600/20 border-2 border-indigo-500 flex items-center justify-center text-indigo-300 font-black text-base shadow-md">
+                    أ
+                </div>
+                <div>
+                    <h1 class="font-bold text-base md:text-lg text-white" id="site-title">سنة تالتة اقتصاد</h1>
+                    <p class="text-xs text-slate-400" id="site-subtitle">مرحباً بك يا أسامة 🎯</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2 space-x-reverse">
+                <button onclick="goHome()" id="home-btn" class="hidden bg-slate-800 hover:bg-slate-700 text-indigo-300 text-xs px-3 py-1.5 rounded-lg font-medium transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> الرئيسية
+                </button>
+                <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs px-3 py-1 rounded-full font-medium">مساحة أسامة</span>
+            </div>
+        </header>
+
+        <!-- المحتوى الرئيسي (الصفحة الرئيسية) -->
+        <main id="main-content" class="max-w-5xl mx-auto p-4 md:p-6 space-y-6">
+
+            <!-- بطاقة الترحيب -->
+            <section class="bg-gradient-to-r from-indigo-900/40 via-slate-900 to-slate-900 border border-indigo-500/20 rounded-2xl p-5 shadow-xl relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                <h2 class="text-xl md:text-2xl font-black text-white mb-2">أهلاً بك يا أسامة في مقر عملياتك الدراسية 🚀</h2>
+                <p class="text-slate-300 text-sm leading-relaxed">كل مجلد هنا مخصص لترتيب كتبك، صور السبورة، وملاحظاتك الخاصة بالترم الثالث لكلية السياسة والاقتصاد جامعة السويس.</p>
+            </section>
+
+            <!-- قسم مجلدات المواد الدراسية -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-folder-open text-indigo-400"></i> مجلدات المواد الدراسية
+                    </h3>
+                    <span class="text-xs text-slate-400">6 مواد أساسية</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- مادة 1 -->
+                    <div class="bg-slate-900/80 border border-slate-800 hover:border-indigo-500/55 transition-all rounded-xl p-4 flex flex-col justify-between shadow-md">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="p-2.5 bg-blue-500/10 text-blue-400 rounded-lg"><i class="fa-solid fa-calculator text-lg"></i></span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">اقتصاد رياضي</h4>
+                            <p class="text-xs text-slate-400">د/ روحية رفعت</p>
+                        </div>
+                        <button onclick="openSubject('اقتصاد رياضي', 'د/ روحية رفعت', 'blue')" class="w-full bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i> فتح المجلد (كتب وصور)
+                        </button>
+                    </div>
+
+                    <!-- مادة 2 -->
+                    <div class="bg-slate-900/80 border border-slate-800 hover:border-indigo-500/55 transition-all rounded-xl p-4 flex flex-col justify-between shadow-md">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="p-2.5 bg-purple-500/10 text-purple-400 rounded-lg"><i class="fa-solid fa-magnifying-glass-chart text-lg"></i></span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">مناهج البحث العلمي</h4>
+                            <p class="text-xs text-slate-400">د/ لبنى غريب</p>
+                        </div>
+                        <button onclick="openSubject('مناهج البحث العلمي', 'د/ لبنى غريب', 'purple')" class="w-full bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i> فتح المجلد (كتب وصور)
+                        </button>
+                    </div>
+
+                    <!-- مادة 3 -->
+                    <div class="bg-slate-900/80 border border-slate-800 hover:border-indigo-500/55 transition-all rounded-xl p-4 flex flex-col justify-between shadow-md">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="p-2.5 bg-amber-500/10 text-amber-400 rounded-lg"><i class="fa-solid fa-landmark text-lg"></i></span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">التاريخ السياسي الحديث</h4>
+                            <p class="text-xs text-slate-400">أ.م.د/ محمود صافي</p>
+                        </div>
+                        <button onclick="openSubject('التاريخ السياسي الحديث للعالم العربي', 'أ.م.د/ محمود صافي', 'amber')" class="w-full bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i> فتح المجلد (كتب وصور)
+                        </button>
+                    </div>
+
+                    <!-- مادة 4 -->
+                    <div class="bg-slate-900/80 border border-slate-800 hover:border-indigo-500/55 transition-all rounded-xl p-4 flex flex-col justify-between shadow-md">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-lg"><i class="fa-solid fa-industry text-lg"></i></span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">اقتصاد صناعي</h4>
+                            <p class="text-xs text-slate-400">د/ ريهام مطاوع</p>
+                        </div>
+                        <button onclick="openSubject('اقتصاد صناعي', 'د/ ريهام مطاوع', 'emerald')" class="w-full bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i> فتح المجلد (كتب وصور)
+                        </button>
+                    </div>
+
+                    <!-- مادة 5 -->
+                    <div class="bg-slate-900/80 border border-slate-800 hover:border-indigo-500/55 transition-all rounded-xl p-4 flex flex-col justify-between shadow-md">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="p-2.5 bg-rose-500/10 text-rose-400 rounded-lg"><i class="fa-solid fa-oil-well text-lg"></i></span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">اقتصاديات البترول</h4>
+                            <p class="text-xs text-slate-400">د/ ريهام و د/ أماني</p>
+                        </div>
+                        <button onclick="openSubject('اقتصاديات البترول', 'د/ ريهام و د/ أماني', 'rose')" class="w-full bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i> فتح المجلد (كتب وصور)
+                        </button>
+                    </div>
+
+                    <!-- مادة 6 -->
+                    <div class="bg-slate-900/80 border border-slate-800 hover:border-indigo-500/55 transition-all rounded-xl p-4 flex flex-col justify-between shadow-md">
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="p-2.5 bg-cyan-500/10 text-cyan-400 rounded-lg"><i class="fa-solid fa-chart-line text-lg"></i></span>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">اقتصاديات التنمية والتخطيط</h4>
+                            <p class="text-xs text-slate-400">د/ أماني مختار</p>
+                        </div>
+                        <button onclick="openSubject('اقتصاديات التنمية والتخطيط', 'د/ أماني مختار', 'cyan')" class="w-full bg-slate-800 hover:bg-indigo-600 text-slate-200 hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i> فتح المجلد (كتب وصور)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم المهام والتنبيهات المنظم -->
+            <section class="bg-slate-900 border border-slate-800 rounded-2xl p-4 md:p-5 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-indigo-400"></i> المهام والتسليمات القادمة
+                    </h3>
+                    <span class="bg-indigo-500/10 text-indigo-400 text-xs px-2.5 py-1 rounded-md">متابعة شخصية</span>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-slate-950/80 border border-slate-800/80 p-3.5 rounded-xl flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 rounded accent-indigo-600 cursor-pointer">
+                            <div>
+                                <p class="text-sm text-slate-200 font-medium">تحضير سكشن الاقتصاد الرياضي الأول</p>
+                                <p class="text-xs text-slate-400 mt-0.5">اقتصاد رياضي • موعد السكشن القادم</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2.5 py-1 rounded-full font-medium">عاجل</span>
+                    </div>
+
+                    <div class="bg-slate-950/80 border border-slate-800/80 p-3.5 rounded-xl flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="w-4 h-4 rounded accent-indigo-600 cursor-pointer">
+                            <div>
+                                <p class="text-sm text-slate-200 font-medium">مراجعة محاضرة مناهج البحث العلمي</p>
+                                <p class="text-xs text-slate-400 mt-0.5">مناهج البحث • تدوين الملاحظات</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded-full font-medium">هذا الأسبوع</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- حقوق النشر والتطوير -->
+    <footer class="text-center py-6 text-xs text-slate-500 border-t border-slate-900 mt-10 space-y-2">
+        <p>رحم الله والدك وأسكنه فسيح جناته 🤲</p>
+        <p>تم التصميم والبناء خصيصاً لـ أسامة | سنة تالتة اقتصاد 🎓</p>
+    </footer>
+
+    <!-- جافاسكريبت للتحكم في فتح المجلدات -->
+    <script>
+        function openSubject(name, professor) {
+            const mainContent = document.getElementById('main-content');
+            const siteTitle = document.getElementById('site-title');
+            const siteSubtitle = document.getElementById('site-subtitle');
+            const homeBtn = document.getElementById('home-btn');
+
+            // تغيير العنوان العلوي
+            siteTitle.innerText = name;
+            siteSubtitle.innerText = "أستاذ المادة: " + professor;
+            homeBtn.classList.remove('hidden');
+
+            // حقن محتوى صفحة المادة الداخلية
+            mainContent.innerHTML = `
+                <div class="space-y-6 animate-fadeIn">
+                    <!-- لوحة معلومات المادة -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full border border-indigo-500/20 font-medium">مجلد تفاعلي خاص</span>
+                            <h2 class="text-xl md:text-2xl font-black text-white mt-2">${name}</h2>
+                            <p class="text-slate-400 text-sm mt-1">الدكتور المسؤول: <span class="text-slate-200 font-bold">${professor}</span></p>
+                        </div>
+                    </div>
+
+                    <!-- الأقسام الثلاثة للمادة (كتب، صور، ملاحظات) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        
+                        <!-- قسم الكتب والمراجع -->
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="font-bold text-white text-base flex items-center gap-2">
+                                        <i class="fa-solid fa-book text-blue-400"></i> الكتب والملازم
+                                    </h3>
+                                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">PDF</span>
+                                </div>
+                                <p class="text-xs text-slate-400 mb-4">ارفعه هنا لتراجع كتاب المادة في أي وقت من موبايلك.</p>
+                                <div class="border-2 border-dashed border-slate-800 hover:border-indigo-500/50 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-950/40">
+                                    <i class="fa-solid fa-cloud-arrow-up text-indigo-400 text-xl mb-2"></i>
+                                    <p class="text-xs text-slate-300 font-medium">اضغط لرفع ملف PDF جديد</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- قسم صور السبورة -->
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="font-bold text-white text-base flex items-center gap-2">
+                                        <i class="fa-solid fa-images text-purple-400"></i> صور السبورة
+                                    </h3>
+                                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">صور</span>
+                                </div>
+                                <p class="text-xs text-slate-400 mb-4">صور السلايدز والسبورة وقت المحاضرة واحتفظ بها.</p>
+                                <div class="border-2 border-dashed border-slate-800 hover:border-indigo-500/50 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-950/40">
+                                    <i class="fa-solid fa-camera text-purple-400 text-xl mb-2"></i>
+                                    <p class="text-xs text-slate-300 font-medium">اضغط لرفع صورة جديدة</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- قسم الملاحظات -->
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <h3 class="font-bold text-white text-base flex items-center gap-2">
+                                        <i class="fa-solid fa-note-sticky text-amber-400"></i> ملاحظاتي
+                                    </h3>
+                                    <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">تدوين</span>
+                                </div>
+                                <p class="text-xs text-slate-400 mb-3">سجل أفكارك وتنبيهات الدكتور السريعة.</p>
+                                <textarea rows="3" placeholder="اكتب ملاحظتك هنا..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-indigo-500 resize-none"></textarea>
+                            </div>
+                            <button class="mt-3 w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold py-2 rounded-lg transition-colors">
+                                حفظ الملاحظة
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goHome() {
+            location.reload(); // إعادة تحميل الصفحة الرئيسية ببساطة
+        }
+    </script>
+</body>
+  </html>
+
